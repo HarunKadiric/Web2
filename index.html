@@ -33,19 +33,21 @@
                             </ul>
                         </li>
                     </ul>
+                    <ul id="adminNav" class="navbar-nav"></ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-light" type="submit">
+                        <button class="btn btn-outline-light" type="button" onclick="navigateTo('cart'); return false;">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
+                    </form>
                         <button class="btn btn-outline-light me-2 ms-2" type="button" onclick="navigateTo('register')">
                             Register
                         </button>
                         <button class="btn btn-outline-light" type="button" onclick="navigateTo('login')">
                             Login
                         </button>
-                    </form>
+                    
                 </div>
             </div>
         </nav>

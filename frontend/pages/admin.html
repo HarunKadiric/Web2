@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Link your CSS -->
+</head>
+<body>
+    <section class="py-5">
+        <div class="container">
+            <h2>Admin Dashboard</h2>
+            <p>Welcome, Admin! Manage your store from here.</p>
+
+            <!-- Manage Products -->
+            <h3>Manage Products</h3>
+            <button class="btn btn-primary" onclick="addProduct()">Add Product</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productTable">
+                    <tr>
+                        <td>Example Product</td>
+                        <td>$50</td>
+                        <td>10</td>
+                        <td><button class="btn btn-danger" onclick="deleteProduct()">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Manage Orders -->
+            <h3>Manage Orders</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>User</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td>John Doe</td>
+                        <td>$120</td>
+                        <td>Shipped</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Logout Button -->
+            <button class="btn btn-danger" onclick="logout()">Logout</button>
+        </div>
+    </section>
+
+    <script src="../js/scripts.js"></script> <!-- Link your JS -->
+</body>
+</html>
