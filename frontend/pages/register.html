@@ -10,18 +10,40 @@
     <section class="py-5">
         <div class="container">
             <h2>Register</h2>
-            <form id="registerForm">
-                <div class="mb-3">
-                    <label class="form-label">Username</label>
-                    <input type="text" class="form-control" id="registerUsername" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Password</label>
-                    <input type="password" class="form-control" id="registerPassword" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Register</button>
-            </form>
+            <form id="registerForm" method="post">
+                <input type="text" name="username" placeholder="Username" required /><br />
+                <input type="email" name="email" placeholder="Email" required /><br />
+                <input type="password" name="password" placeholder="Password" required /><br />
+                <input type="hidden" name="role" value="user" />
+                <button type="submit">Register</button>
+              </form>
         </div>
+        <div id="registerResult"></div>
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const form = e.target;
+  const data = {
+    username: form.username.value,
+    email: form.email.value,
+    password: form.password.value,
+    role: form.role.value
+  };
+
+  const response = await fetch('backend/routes/user.php?action=register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  const result = await response.json();
+  document.getElementById('registerResult').textContent = result.success
+    ? "✅ Registration successful"
+    : "❌ Registration failed";
+});
+</script>
     </section>
 
 
