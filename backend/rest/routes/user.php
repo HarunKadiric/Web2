@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../dao/UsersDAO.php';
+require_once __DIR__ . '/../dao/usersDAO.php';
 require_once __DIR__ . '/../db.php';
 
 header("Content-Type: application/json");
